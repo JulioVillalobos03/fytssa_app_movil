@@ -1,31 +1,51 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
+import { Platform } from "react-native";
 
-import { Platform } from 'react-native';
+export type ThemeMode = "light" | "dark";
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
-
-export const Colors = {
-  light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+export const base = {
+  radius: {
+    md: 14,
+    lg: 18,
   },
-  dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+  spacing: {
+    xs: 6,
+    sm: 10,
+    md: 16,
+    lg: 24,
+    xl: 32,
+  },
+  font: {
+    title: 28,
+    subtitle: 14,
+    body: 16,
+    small: 12,
   },
 };
+
+export const lightTheme = {
+  mode: "light" as ThemeMode,
+  background: "#F8FAFC",
+  surface: "#FFFFFF",
+  text: "#0F172A",
+  textSecondary: "#475569",
+  border: "#E2E8F0",
+  shadow: "rgba(2, 6, 23, 0.08)",
+  danger: "#EF4444",
+  button: "#D4D9E1",
+};
+
+export const darkTheme = {
+  mode: "dark" as ThemeMode,
+  background: "#121212",
+  surface: "#121212",
+  text: "#F8FAFC",
+  textSecondary: "#ffffff",
+  border: "#172554",
+  shadow: "rgba(0, 0, 0, 0.30)",
+  danger: "#F87171",
+  button: "#6D7281",
+};
+
 
 export const Fonts = Platform.select({
   ios: {

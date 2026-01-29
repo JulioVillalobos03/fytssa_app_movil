@@ -100,6 +100,7 @@ Puedes abrir la aplicacion en :
 * Emulador Android
 * Dispositivo Fisico
 
+
 ## 📲 APK
 Para facilitar la revisión de la prueba, he desplegado el instalador en el siguiente sitio:
 
@@ -108,3 +109,17 @@ Para facilitar la revisión de la prueba, he desplegado el instalador en el sigu
 1. Descarga el archivo `.apk` desde tu dispositivo Android.
 2. Ejecuta el instalador (es posible que debas aceptar permisos de "Fuentes desconocidas").
 3. ¡Listo! Ya puedes probar la aplicacion en tu dispositivo.
+
+
+## 🔐 Usuarios de prueba
+
+Para facilitar la evaluación de la aplicación, se incluyen los siguientes usuarios de prueba.
+Cada usuario pertenece a una empresa distinta dentro del sistema.
+
+**Contraseña para todos los usuarios:** `123456`
+
+| Empresa      | Email                  |
+|-------------|------------------------|
+| Empresa 1   | juan@empresa1.com      |
+| Empresa 2   | ana@empresa2.com       |
+| Empresa 3   | carlos@empresa3.com    |

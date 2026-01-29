@@ -123,3 +123,19 @@ Cada usuario pertenece a una empresa distinta dentro del sistema.
 | Empresa 1   | juan@empresa1.com      |
 | Empresa 2   | ana@empresa2.com       |
 | Empresa 3   | carlos@empresa3.com    |
+
+
+## 🛠️ Backend
+
+La aplicación móvil consume una API REST desarrollada como parte del mismo ejercicio técnico.
+
+
+🔗 **Repositorio del Backend (Laravel):**  
+👉 https://github.com/JulioVillalobos03/fytssa_backend
+
+### Características del backend:
+- API REST para autenticación y perfil de usuario
+- Manejo de sesión por empresa (multi-empresa)
+- Subida y gestión de avatar de usuario
+- Respuestas estandarizadas y códigos de error unificados
+- Integración directa con la app móvil

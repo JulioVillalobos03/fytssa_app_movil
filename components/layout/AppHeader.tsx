@@ -10,26 +10,36 @@ export function AppHeader() {
 
   if (!user?.company) return null;
 
+  const companyColor = user.company.primary_color;
+
   return (
     <SafeAreaView
       edges={["top"]}
       style={[
         styles.safe,
-        { backgroundColor: user.company.primary_color },
+        { backgroundColor: theme.background },
       ]}
     >
       <View
         style={[
           styles.container,
-          {
-            borderBottomColor: theme.border,
-          },
+          { borderBottomColor: theme.border },
         ]}
       >
         <View style={styles.row}>
-          <View style={styles.badge} />
+          <View
+            style={[
+              styles.badge,
+              { backgroundColor: companyColor },
+            ]}
+          />
 
-          <Text style={[styles.company]}>
+          <Text
+            style={[
+              styles.company,
+              { color: companyColor },
+            ]}
+          >
             {user.company.name}
           </Text>
         </View>
@@ -46,7 +56,9 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     paddingHorizontal: base.spacing.lg,
-    paddingVertical: base.spacing.md,
+    paddingTop: base.spacing.xs,
+    paddingBottom: base.spacing.md,
+    justifyContent: "center",
     borderBottomWidth: 1,
   },
 
@@ -57,16 +69,14 @@ const styles = StyleSheet.create({
   },
 
   badge: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    backgroundColor: "#fff",
+    width: 8,
+    height: 8,
+    borderRadius: 4,
   },
 
   company: {
-    color: "#fff",
     fontSize: 14,
-    fontWeight: "900",
+    fontWeight: "800",
     textTransform: "uppercase",
     letterSpacing: 0.6,
   },

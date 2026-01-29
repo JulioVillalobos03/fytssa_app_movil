@@ -34,15 +34,21 @@ export async function register(payload: {
   password: string;
   password_confirmation: string;
 }) {
-  const res = await apiFetch<any>("/auth/register", {
+  const response = await apiFetch<any>("/auth/register", {
     method: "POST",
     body: JSON.stringify(payload),
   });
 
-  await setToken(res.token);
-  await setUser(res.user);
-
-  return res.user;
+  // 🔐 validar estructura real del backend
+  if (!response?.data?.token || !response?.data?.user) {
+    throw {
+      code: response?.code || "AUTH_INVALID_RESPONSE",
+      message: "Invalid register response structure",
+      response,
+    };
+  }
+  
+  return response.data.user;
 }
 
 

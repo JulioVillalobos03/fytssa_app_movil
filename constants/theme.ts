@@ -13,6 +13,7 @@ export const base = {
     md: 16,
     lg: 24,
     xl: 32,
+    xxl: 48,
   },
   font: {
     title: 28,

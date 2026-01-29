@@ -4,11 +4,9 @@ import { useTheme } from "../../../hooks/useTheme";
 import { base } from "../../../constants/theme";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { useT } from "@/hooks/useT";
-import { useSession } from "@/hooks/useSession";
 
 export default function Home() {
   const theme = useTheme();
-  const { user } = useSession();
   const t = useT();
 
   return (
@@ -29,11 +27,6 @@ export default function Home() {
         >
           <Text style={[styles.title, { color: theme.text }]}>
             {t("home.welcome")}{" "}
-            {user?.name ? (
-              <Text style={{ fontWeight: "900" }}>
-                {user.name}
-              </Text>
-            ) : null}
             👋
           </Text>
 

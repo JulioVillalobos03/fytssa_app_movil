@@ -33,7 +33,7 @@ export default function Profile() {
 
     try {
       const data = await getProfile();
-
+      console.log(data.avatar);
       if (!data) {
         setErrorCode("PROFILE_NOT_FOUND");
         setProfile(null);

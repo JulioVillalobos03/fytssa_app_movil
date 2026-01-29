@@ -2,19 +2,18 @@ import { useEffect, useState } from "react";
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { getUser } from "../../../services/storage.service";
+import { useTheme } from "../../../hooks/useTheme";
 
 export default function TabsLayout() {
-  const [activeColor, setActiveColor] = useState("#2563EB"); // fallback
+  const theme = useTheme();
+
+  const [activeColor, setActiveColor] = useState("#2563EB");
 
   useEffect(() => {
     (async () => {
-      try {
-        const user = await getUser();
-        if (user?.company?.primary_color) {
-          setActiveColor(user.company.primary_color);
-        }
-      } catch (e) {
-        console.warn("[TABS] Could not load company color", e);
+      const user = await getUser();
+      if (user?.company?.primary_color) {
+        setActiveColor(user.company.primary_color);
       }
     })();
   }, []);
@@ -25,7 +24,14 @@ export default function TabsLayout() {
         headerShown: false,
         tabBarShowLabel: true,
         tabBarActiveTintColor: activeColor,
-        tabBarInactiveTintColor: "#9CA3AF",
+        tabBarInactiveTintColor: theme.textSecondary,
+
+        tabBarStyle: {
+          backgroundColor: theme.surface,
+          borderTopColor: theme.border,
+          borderTopWidth: 1,
+        },
+
         tabBarIcon: ({ color, size, focused }) => {
           let iconName: keyof typeof Ionicons.glyphMap;
 
@@ -43,7 +49,13 @@ export default function TabsLayout() {
               iconName = "ellipse";
           }
 
-          return <Ionicons name={iconName} size={size} color={color} />;
+          return (
+            <Ionicons
+              name={iconName}
+              size={size}
+              color={color}
+            />
+          );
         },
       })}
     >

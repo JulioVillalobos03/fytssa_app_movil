@@ -21,7 +21,6 @@ import { base } from "@/constants/theme";
 import { useT } from "@/hooks/useT";
 import type { ProfileData } from "@/types/profile";
 
-
 export default function EditProfile() {
   const theme = useTheme();
   const t = useT();
@@ -30,6 +29,7 @@ export default function EditProfile() {
   const [saving, setSaving] = useState(false);
   const [errorCode, setErrorCode] = useState<string | undefined>();
   const [profile, setProfile] = useState<ProfileData | null>(null);
+  const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
 
   const [form, setForm] = useState({
     name: "",
@@ -37,10 +37,7 @@ export default function EditProfile() {
     avatar: null as string | null,
   });
 
-  const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
-
   const errorMessage = useApiError(errorCode);
-
   const accentColor =
     profile?.company?.primary_color ?? theme.text;
 
@@ -76,6 +73,7 @@ export default function EditProfile() {
 
     if (!result.canceled) {
       setAvatarPreview(result.assets[0].uri);
+      setErrorCode(undefined);
     }
   }
 
@@ -193,12 +191,7 @@ export default function EditProfile() {
         {/* Form */}
         <View style={styles.form}>
           <View>
-            <Text
-              style={[
-                styles.label,
-                { color: theme.text },
-              ]}
-            >
+            <Text style={[styles.label, { color: theme.text }]}>
               {t("profile.name")}
             </Text>
             <Input
@@ -211,12 +204,7 @@ export default function EditProfile() {
           </View>
 
           <View>
-            <Text
-              style={[
-                styles.label,
-                { color: theme.text },
-              ]}
-            >
+            <Text style={[styles.label, { color: theme.text }]}>
               {t("profile.email")}
             </Text>
             <Input

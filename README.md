@@ -101,4 +101,10 @@ Puedes abrir la aplicacion en :
 * Dispositivo Fisico
 
 ## 📲 APK
-Se puede descargar el APK funcional desde esta página <a href="https://darkturquoise-ape-711990.hostingersite.com/" target="_blank">aquí</a>.
+Para facilitar la revisión de la prueba, he desplegado el instalador en el siguiente sitio:
+
+> **[Descargar APK funcional aquí](https://darkturquoise-ape-711990.hostingersite.com/)** > 
+
+1. Descarga el archivo `.apk` desde tu dispositivo Android.
+2. Ejecuta el instalador (es posible que debas aceptar permisos de "Fuentes desconocidas").
+3. ¡Listo! Ya puedes probar la aplicacion en tu dispositivo.

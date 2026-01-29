@@ -12,9 +12,19 @@ export const ERROR_MESSAGES: Record<
     en: "Email already exists for this company",
   },
 
+  AUTH_INVALID_RESPONSE: {
+    es: "Respuesta inválida del servidor",
+    en: "Invalid server response",
+  },
+
   FIELDS_REQUIRED: {
     es: "Todos los campos son obligatorios",
     en: "All fields are required",
+  },
+
+  INVALID_EMAIL: {
+    es: "El correo no tiene un formato válido",
+    en: "Invalid email format",
   },
 
   PASSWORD_TOO_SHORT: {
@@ -30,6 +40,11 @@ export const ERROR_MESSAGES: Record<
   VALIDATION_ERROR: {
     es: "Datos inválidos, revisa el formulario",
     en: "Invalid data, check the form",
+  },
+
+  PROFILE_NOT_FOUND: {
+    es: "No se pudo cargar el perfil",
+    en: "Profile could not be loaded",
   },
 
   UNKNOWN_ERROR: {
